@@ -125,34 +125,13 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-            'formatter': 'simple'
-        }
-    },
-    'formatters': {
-        'simple': {
-            'format': '%(levelname)s  %(asctime)s  %(pathname)s: %(message)s'
-        }
-    },
-    'loggers': {
-        '': {
-            'handlers': ['console'],
-            'level': 'DEBUG'
-        }
-    }
-}
-
-
 from server.config import AppConfig
 
 CONFIG_FILE = "/home/pi/home-alarm/dev/conf/application.yml"
 config = AppConfig(CONFIG_FILE);
 config.load()
+
+LOGGING = config["logging"]
 
 SNAPSHOT_DIR = config["output"]["captures"]
 PASSWORD = config["security"]["password"]
