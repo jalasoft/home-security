@@ -1,0 +1,182 @@
+@font-face {
+    font-family: 'camingo';
+    src: url('/static/dashboard/CamingoCode-Bold.ttf') format('truetype');
+}
+
+body {
+    background-color: #02070b;    
+    font-size: 100%;
+}
+
+#loginView {
+	margin: auto;
+	margin-top: 100px;
+	padding-bottom: 15px;
+	width: 50%;
+	min-width: 200px;
+	max-width: 500px;
+	font-family: camingo;
+	color: white;
+	background: linear-gradient(#2b3136,#13191e);
+	display: none;
+}
+
+@media screen and (orientation: portrait) {
+	#loginView {
+		width: 100%;
+	}
+}
+
+#loginView header {
+	margin-bottom: 15px;
+    border-bottom: 1px solid white;
+    font-size: 2em;
+    padding-left: 15px;
+}
+
+@media screen and (orientation: portrait) {
+	#loginView header {
+		font-size: 3em;
+	}
+}
+
+#loginView form .pwd {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+#loginView form .pwd label {
+	margin-left: 15px;
+	font-size: 1.5em;
+	margin-right: 10px;
+	flex: 0 1 content;
+}
+
+@media screen and (orientation: portrait) {
+	#loginView form .pwd label {
+		font-size: 2.5em;
+	}
+}
+
+#loginView form .pwd input {
+	margin-right: 15px;
+	border: 1px solid white;
+	background-color: black;
+	font-size: 1em;
+	color: white;
+	flex: 1;
+}
+
+#loginView form div {
+	margin-bottom: 15px;
+}
+
+#loginView form button {
+	border: 0px solid white;
+	font: 1.5em camingo;
+	background: white;
+	margin-right: 30px;
+	margin-left: auto;
+	display: block;	
+}
+
+@media screen and (orientation: portrait) {
+	.loginView form button {
+		font-size: 2.5em;
+	}
+}
+
+#mainView {
+	display: none;
+	font-family: camingo;
+}
+
+#mainView #header {
+	background-color: #2a2e33;
+	width: 100%;
+	margin-bottom: 15px;
+	min-height: 50px;
+	display: flex;
+	flex-flow: row-reverse nowrap;
+	align-items: center;
+}
+
+#mainView #header button {
+	background-color: black;
+	color: white;
+	font: inherit;
+	font-size: 1.5em;
+	margin-right: 10px;
+	flex: 0;
+	
+}
+
+#mainView article.tile {
+    margin: auto;
+    width: 50%;
+}
+
+#mainView .tile > header {
+    background: linear-gradient(#2b3136,#13191e);
+    color: white;
+    font-size: 2em;
+    display: flex;
+    flex: row nowrap;
+}
+
+#mainView .tile > header > .description {
+    flex: 1;
+    margin: 0px;
+    padding: 0px;
+    font-size: 1.25em;
+    padding-left: 0.5em;
+}
+
+#mainView .tile > header > .description > .timestamp {
+	font-size: 0.5em;
+}
+
+#mainView .tile > header > .refresh {
+    flex: 0 0 4vw;
+    height: 4vw;
+    margin: 0px;
+    padding: 0px;
+}
+
+#mainView .tile > header > .refresh > object {
+    width: 100%;
+}
+
+#mainView .tile > section > .capture {
+	width: 100%;
+	height: auto;
+}
+
+/*RATING ELEMENT PROGRESS ANIMATION*/
+
+@keyframes rotating-progress {
+	from {
+		transform: rotate(0turn);
+	}
+	
+	to {
+		transform: rotate(1turn);
+	}
+} 
+
+.progress {
+    animation-name: rotating-progress;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-play-state: paused;
+}
+
+.progress-running {
+	animation-play-state: running;
+}
+
+.progress-paused {
+	animation-play-state: paused;
+}
+

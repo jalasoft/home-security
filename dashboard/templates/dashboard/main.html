@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <title>home security</title>
+        <meta charset="UTF-8"/>
+        {% load static %}
+        <script src="{% static "dashboard/Bootstrap.js" %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static "dashboard/styles.css" %}"/>
+    </head>
+    <body>
+		<article id="loginView">
+			<header>Přihlášení</header>
+			<form>
+				<div class="pwd">
+					<label for="password">Heslo:</label>
+					<input type="password" name="password" id="pwd" placeholder="heslo"/>
+					{% csrf_token %}
+				</div>
+				<button>Přihlásit</button>
+			</form>
+		</article>
+		<article id="mainView">
+			<header id="header">
+				<button id="logout">Logout</button>
+			</header>
+			<article class="tile" data-tile-type="camera" data-area="obyvak">
+				<header>
+					<h1 class="description">
+						<span class="area"></span>
+						<span class="timestamp"></span>
+					</h1>
+					<img src="{% static "dashboard/refresh.svg" %}" class="refresh progress" />
+				</header>
+				<section>
+					<img class="capture"/>
+				</section>
+			</article>
+        </article>
+    </body>
+</html>
