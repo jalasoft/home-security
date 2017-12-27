@@ -7,6 +7,9 @@ class AppConfig:
     def load(self):
         with open(self.file_path, "r") as config_file:
              self.data = yaml.load(config_file)
+    
+    def __contains__(self, key):
+        return key in self.data	
 
     def __getitem__(self, key):
         if self.data is None:
