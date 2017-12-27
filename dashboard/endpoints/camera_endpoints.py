@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseBadRequest
 
 from server import settings
-from dashboard.lib.managed_camera import ManagedCamera
+from dashboard.services.managed_camera import ManagedCamera
 
 import logging
 

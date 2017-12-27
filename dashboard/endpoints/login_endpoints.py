@@ -2,7 +2,7 @@ from django.http import HttpResponse
 
 import logging
 from server import settings
-from dashboard.lib.jwt import WebTokenError
+from dashboard.endpoints.jwt import WebTokenError
 from dashboard.application import securityTokenProcessor, blackListedTokens
 
 logger = logging.getLogger("login_endpoints")

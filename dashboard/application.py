@@ -1,5 +1,5 @@
 
-from dashboard.lib.jwt import SecurityWebTokenProcessor
+from dashboard.endpoints.jwt import SecurityWebTokenProcessor
 
 securityTokenProcessor = SecurityWebTokenProcessor()
 
