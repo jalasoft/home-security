@@ -30,7 +30,8 @@ function CameraController(parentController, root) {
 	}
 
 	CameraController.prototype.openNewTabWithCapture = function() {
-		window.open(this.captureUrl(false), this.area);
+		let imageUrl = this.captureImg.src;
+		window.open(imageUrl, this.area);
 	}
 
 	CameraController.prototype.captureFreshView = function() {

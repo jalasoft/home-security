@@ -2,7 +2,6 @@ from django.shortcuts import render
 
 def error404(request):
     data = {}
-    print("SRACKAAAAA|")
     return render(request, "dashboard/custom404.html", data)
     
     
