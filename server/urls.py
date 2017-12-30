@@ -13,10 +13,13 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
-
-#homesec - SERVER
+from django.conf.urls import url, include, handler404, handler500
 
 urlpatterns = [
     url(r'^home-security/', include('dashboard.urls'))
 ]
+
+handler404 = 'dashboard.error_views.error404'
+handler500 = 'dashboard.error_views.error500'
+
+

@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'camingo';
+    src: url('/static/dashboard/CamingoCode-Bold.ttf') format('truetype');
+}
+
+body {
+	font-family: camingo;
+	color: white;
+	background: linear-gradient(#2b3136,#13191e);
+}

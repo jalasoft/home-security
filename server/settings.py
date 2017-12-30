@@ -15,20 +15,22 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+from server.config import AppConfig
+
+CONFIG_FILE = BASE_DIR + "/../conf/application.yml"
+config = AppConfig(CONFIG_FILE);
+config.load()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'c$l8eg)da-!u#l9ug82w36sjb33dn+d4f!l1xb+em*sa%$%nh^'
+SECRET_KEY = config["security"]["key"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config["debug"]
 
-#TODO maybe improve
 ALLOWED_HOSTS = [ "*" ]
-#ALLOWED_HOSTS = [ "127.0.0.1", "192.168.1.2", "192.168.1.5", "192.168.1.4", "localhost"]
-
 
 # Application definition
 
@@ -36,7 +38,7 @@ INSTALLED_APPS = [
     #'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    #'django.contrib.sessions',
+    'django.contrib.sessions',
     #'django.contrib.messages',
     'django.contrib.staticfiles',
     'dashboard'
@@ -56,7 +58,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'server.urls'
 
-CSRF_USE_SESSIONS = True
+CSRF_USE_SESSIONS = False
 
 TEMPLATES = [
     {
@@ -108,12 +110,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
-
-from server.config import AppConfig
-
-CONFIG_FILE = BASE_DIR + "/../conf/application.yml"
-config = AppConfig(CONFIG_FILE);
-config.load()
 
 LOGGING = config["logging"]
 

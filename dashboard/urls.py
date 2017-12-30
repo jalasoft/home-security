@@ -1,5 +1,4 @@
 from django.conf.urls import url
-
 from dashboard.endpoints import main_view, login_endpoints, camera_endpoints
 
 #DASHBOARD
@@ -11,3 +10,5 @@ urlpatterns = [
     url(r"validateToken/$", login_endpoints.validateToken),
     url(r"camera/(?P<area>[a-z]+)$", camera_endpoints.captureArea)
 ]
+
+
