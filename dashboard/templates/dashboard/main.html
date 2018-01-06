@@ -23,6 +23,7 @@
 			<header id="header">
 				<button id="logout">Logout</button>
 			</header>
+			<div id="content">
 			{% for area in areas %}
 			<article class="tile" data-tile-type="camera" data-area={{ area }}>
 				<header>
@@ -37,6 +38,7 @@
 				</section>
 			</article>
 			{% endfor %}
+			</div>
         </article>
     </body>
 </html>

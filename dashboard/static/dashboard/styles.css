@@ -113,7 +113,28 @@ body {
 
 #mainView article.tile {
     margin: auto;
-    width: 50%;
+    width: 100%;
+}
+
+#mainView #content {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#mainView #content .tile {
+    flex: 0 1 auto;
+}
+
+@media screen and (orientation: portrait) {
+
+    #mainView #content {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    
+    #mainView #content .tile {
+        flex: 1 0 auto;
+    }
 }
 
 #mainView .tile > header {
