@@ -8,7 +8,7 @@ urlpatterns = [
     url(r"login/$", login_endpoints.login),
     url(r"logout/$", login_endpoints.logout),
     url(r"validateToken/$", login_endpoints.validateToken),
-    url(r"camera/(?P<area>[a-z]+)$", camera_endpoints.captureArea)
+    url(r"camera/(?P<area>[a-z0-9]+)$", camera_endpoints.captureArea)
 ]
 
 
